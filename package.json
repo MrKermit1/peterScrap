@@ -1,0 +1,14 @@
+{
+  "name": "siewniapik_scrapper",
+  "version": "1.0.0",
+  "description": "scraper do komunikatow",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "mrKermit",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^23.4.1"
+  }
+}
