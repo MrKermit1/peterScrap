@@ -12,6 +12,7 @@ const main = async () => {
     const page = await browser.newPage()
     await page.goto(url)
 
+    //KOMUNIKATY
     const allStatements = await page.evaluate( () => {
         const statements = document.querySelectorAll('div.notice')
 
@@ -22,7 +23,26 @@ const main = async () => {
             return {date, text}
         })
     })
-    console.log(allStatements)
+
+    //PLIKI(MATERIAŁY)
+    const allFiles = await page.evaluate( () => {
+        const files = document.querySelectorAll('div.file')
+
+        return Array.from(files).map((file) => {
+            const name = file.querySelector('h4').innerText.replace(/\s+/, "") //usuwa białe spacje
+            const hrefs = Array.from( file.querySelectorAll('a') ).map((link) => {
+                return JSON.stringify({
+                    href: link.getAttribute('href'),
+                    title: link.innerText
+                })
+            })
+
+            return {name, hrefs}
+        })
+    } )
+
+    //console.log(allStatements)
+    console.log(allFiles)
     await browser.close()
 }
 
