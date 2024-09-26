@@ -5,8 +5,8 @@ const url = "https://zse.edu.pl/Siewniak/"
 const main = async () => {
     const browser = await puppeteer.launch(
         {
-            headless: true, // Run in headless mode (no GUI)
-            args: ['--no-sandbox', '--disable-setuid-sandbox'], // Required for cloud environments like Render
+            headless: true, 
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
         }
     )
     const page = await browser.newPage()
