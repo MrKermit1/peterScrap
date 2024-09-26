@@ -3,7 +3,12 @@ const puppeteer = require("puppeteer")
 const url = "https://zse.edu.pl/Siewniak/"
 
 const main = async () => {
-    const browser = await puppeteer.launch()
+    const browser = await puppeteer.launch(
+        {
+            headless: true, // Run in headless mode (no GUI)
+            args: ['--no-sandbox', '--disable-setuid-sandbox'], // Required for cloud environments like Render
+        }
+    )
     const page = await browser.newPage()
     await page.goto(url)
 

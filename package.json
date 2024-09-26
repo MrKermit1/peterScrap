@@ -4,6 +4,7 @@
   "description": "scraper do komunikatow",
   "main": "index.js",
   "scripts": {
+    "postinstall": "puppeteer install",
     "test": "start"
   },
   "author": "mrKermit",
