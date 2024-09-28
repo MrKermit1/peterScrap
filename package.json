@@ -10,6 +10,7 @@
   "author": "mrKermit",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "jsdom": "^25.0.1",
     "puppeteer": "^23.4.1"
