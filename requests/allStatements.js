@@ -4,14 +4,14 @@ const allStatements = async (res) => {
     try {
         const browser = await puppeteer.launch(
             {
-                executablePath: process.env.NODE_ENV === 'production' ? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath(),
-                headless: true, //nie otwieraj okna
                 args: [
                     '--no-sandbox', 
                     '--disable-setuid-sandbox',
                     '--single-process',
                     '--no-zygote',
                 ],
+                executablePath: process.env.NODE_ENV === 'production' ? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath(),
+                headless: true, //nie otwieraj okna
             }
         );
         const page = await browser.newPage();
