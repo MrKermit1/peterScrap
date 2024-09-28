@@ -1,4 +1,4 @@
-FROM ghcr.io/puppeteer/puppeteer:16.1.0
+FROM ghcr.io/puppeteer/puppeteer:23.4.1
 
 
 # Install Google Chrome
