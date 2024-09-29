@@ -1,8 +1,9 @@
 const puppeteer = require("puppeteer")
 require("dotenv").config()
+var browser = null;
 const allStatements = async (res) => {
     try {
-        const browser = await puppeteer.launch(
+        browser = await puppeteer.launch(
             {
                 args: [
                     '--no-sandbox', 
